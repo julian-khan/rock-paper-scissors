@@ -7,7 +7,7 @@ function getComputerChoice() {
     console.log(computerOptions);
 }
 
-function executeGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     const gameResult = getWinner(playerSelection, computerSelection);
 
     return `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`
@@ -42,4 +42,4 @@ function getWinner(playerSelection, computerSelection) {
 
 const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
 const computerSelection = getComputerChoice();
-alert(executeGame(playerSelection, computerSelection));
+alert(playRound(playerSelection, computerSelection));
