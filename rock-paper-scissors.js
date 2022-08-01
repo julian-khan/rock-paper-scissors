@@ -40,6 +40,15 @@ function getWinner(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
-const computerSelection = getComputerChoice();
-alert(playRound(playerSelection, computerSelection));
+function game() {
+    const numRounds = parseInt(prompt('Enter the number of rounds you\'d like to play, as a whole number'));
+
+    for (let i = 0; i < numRounds; i++) {
+        const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+
+game();
