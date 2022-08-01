@@ -1,35 +1,45 @@
-const playerSelection = prompt('Choose scissors, paper or rock');
-const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
-    computerOptions = ['Rock', 'Paper', 'Scissors'];
+    computerOptions = ['rock', 'paper', 'scissors'];
 
     const computerChoice = Math.floor(Math.random() * 3); // Generates an integer between 0-2
     return computerOptions[computerChoice];
+    console.log(computerOptions);
 }
 
 function executeGame(playerSelection, computerSelection) {
-    gameOutcomes = ['It\'s a draw!', 'Player wins!', 'Computer wins!']
-    
+    const gameResult = getWinner(playerSelection, computerSelection);
+
+    return `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`
+}
+
+function getWinner(playerSelection, computerSelection) {
+    const gameOutcomes = ['It\'s a draw!', 'Player wins!', 'Computer wins!'];
+
     if (playerSelection === computerSelection) {
         return gameOutcomes[0];
     } 
 
-    if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
         return gameOutcomes[1];
-    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         return gameOutcomes[2];
     }
 
-    if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    if (playerSelection === 'paper' && computerSelection === 'rock') {
         return gameOutcomes[1];
-    } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         return gameOutcomes[2];
     }
 
-    if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    if (playerSelection === 'scissors' && computerSelection === 'paper') {
         return gameOutcomes[1];
-    } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         return gameOutcomes[2];
     }
+
 }
+
+const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
+const computerSelection = getComputerChoice();
+alert(executeGame(playerSelection, computerSelection));
