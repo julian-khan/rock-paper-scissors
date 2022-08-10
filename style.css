@@ -7,12 +7,13 @@ body {
     margin-top: 20px;
 }
 
-/* fix the above to change the text for the entire page */
-
 .button-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    width: 300px;
     gap: 10px;
+
 }
 
 button {
@@ -20,4 +21,6 @@ button {
     font-size: 15px;
     background-color: mistyrose;
     border-radius: 15%;
+    height: 70px;
+    width: 100px;
 }
