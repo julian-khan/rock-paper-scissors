@@ -50,5 +50,14 @@ function game() {
     }
 }
 
+/* Need to fix the below logic so that clicking a button results in playRound being properly called
+const button = document.querySelectorAll('button');
+
+button.forEach((b) => {b.addEventListener('click', playRound(playerSelection, computerSelection))
+});
+
+*/
+
 
 game();
+
