@@ -1,0 +1,16 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* fix the above to change the text for the entire page */
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
