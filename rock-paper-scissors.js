@@ -30,6 +30,8 @@ function resultOut() {
     const resultDiv = document.createElement('div');
     resultDiv.textContent = roundResult;
 
+//need to finish this resultout function -> create a div that outputs the result and the number of rounds remaining.
+
 }
        
 
@@ -64,7 +66,8 @@ function getWinner(playerSelection, computerSelection) {
 roundCount = 0;
 playerScore = 0;
 computerScore = 0;
-// roundResult = '';
+
+//Create a function taht ends the game when 5 rounds have been completed -> using roundcount.
 
 const button = document.querySelectorAll('button');
 
