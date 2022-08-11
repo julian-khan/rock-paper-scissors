@@ -41,20 +41,6 @@ function getWinner(playerSelection, computerSelection) {
 
 }
 
-/*
-function game() {
-    //const numRounds = parseInt(prompt('Enter the number of rounds you\'d like to play, as a whole number'));
-    // above logic removed to accomodate UI design
-
-    for (let i = 0; i < 5; i++) {
-        //const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
-        const computerSelection = getComputerChoice();
-
-        console.log(playRound(playerSelection, computerSelection));
-    }
-} */
-
-
 const button = document.querySelectorAll('button');
 
 button.forEach((b) => {
@@ -63,7 +49,6 @@ button.forEach((b) => {
         const playerSelection = b.textContent.toLowerCase();
         playRound(playerSelection);
     });
-    // b.addEventListener('click', playRound(playerSelection, computerSelection));
 });
 
 
