@@ -4,7 +4,6 @@ function getComputerChoice() {
 
     const computerChoice = Math.floor(Math.random() * 3); // Generates an integer between 0-2
     return computerOptions[computerChoice];
-    console.log(computerOptions);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -41,22 +40,25 @@ function getWinner(playerSelection, computerSelection) {
 }
 
 function game() {
-    const numRounds = parseInt(prompt('Enter the number of rounds you\'d like to play, as a whole number'));
+    //const numRounds = parseInt(prompt('Enter the number of rounds you\'d like to play, as a whole number'));
+    // above logic removed to accomodate UI design
 
-    for (let i = 0; i < numRounds; i++) {
-        const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
+    for (let i = 0; i < 5; i++) {
+        //const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
     }
 }
 
-/* Need to fix the below logic so that clicking a button results in playRound being properly called
+
 const button = document.querySelectorAll('button');
 
-button.forEach((b) => {b.addEventListener('click', playRound(playerSelection, computerSelection))
+button.forEach((b) => {
+    b.addEventListener('click', game());
+    b.addEventListener('click', playRound(playerSelection, computerSelection))
 });
 
-*/
+
 
 
 game();
