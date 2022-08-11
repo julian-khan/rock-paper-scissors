@@ -10,9 +10,9 @@ function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
     const gameResult = getWinner(playerSelection, computerSelection);
     trackScore(gameResult);
-
+    
     const roundResult = `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
-    return roundResult;
+    resultOut(roundResult);
 }
 
 function trackScore(gameResult) {
@@ -64,7 +64,7 @@ function getWinner(playerSelection, computerSelection) {
 roundCount = 0;
 playerScore = 0;
 computerScore = 0;
-roundResult = '';
+// roundResult = '';
 
 const button = document.querySelectorAll('button');
 
@@ -72,7 +72,7 @@ button.forEach((b) => {
     b.addEventListener('click', () => {
         const playerSelection = b.textContent.toLowerCase();
         playRound(playerSelection);
-
+        
     });
 });
 
