@@ -9,8 +9,10 @@ function getComputerChoice() {
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
     const gameResult = getWinner(playerSelection, computerSelection);
+    trackScore(gameResult);
 
-    return `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`
+    const roundResult = `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
+    return roundResult;
 }
 
 function trackScore(gameResult) {
@@ -22,6 +24,12 @@ function trackScore(gameResult) {
         } else {
             return
         }
+}
+
+function resultOut() {
+    const resultDiv = document.createElement('div');
+    resultDiv.textContent = roundResult;
+
 }
        
 
@@ -56,6 +64,7 @@ function getWinner(playerSelection, computerSelection) {
 roundCount = 0;
 playerScore = 0;
 computerScore = 0;
+roundResult = '';
 
 const button = document.querySelectorAll('button');
 
@@ -67,8 +76,7 @@ button.forEach((b) => {
     });
 });
 
-/* 
-const resultsDiv = document.createElement('div');
-resultsDiv.textContent = `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
 
-*/
+
+
+
