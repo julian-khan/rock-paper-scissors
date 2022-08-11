@@ -14,8 +14,7 @@ function playRound(playerSelection) {
 }
 
 function trackScore(gameResult) {
-    gameCount += 1;
-    //create playerScore and computerScore variables
+    roundCount += 1;
 
     if (gameResult === 'Player wins!') {
         playerScore += 1; } else if (gameResult === 'Computer wins!') {
@@ -23,6 +22,7 @@ function trackScore(gameResult) {
         } else {
             return
         }
+}
        
 
 function getWinner(playerSelection, computerSelection) {
@@ -52,6 +52,8 @@ function getWinner(playerSelection, computerSelection) {
 
 }
 
+
+roundCount = 0;
 playerScore = 0;
 computerScore = 0;
 
@@ -61,17 +63,12 @@ button.forEach((b) => {
     b.addEventListener('click', () => {
         const playerSelection = b.textContent.toLowerCase();
         playRound(playerSelection);
-        console.log(playerScore);
-        console.log(computerScore);
 
     });
 });
 
+/* 
 const resultsDiv = document.createElement('div');
 resultsDiv.textContent = `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
 
-
-
-
-
-
+*/
