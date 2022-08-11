@@ -6,8 +6,10 @@ function getComputerChoice() {
     return computerOptions[computerChoice];
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice();
     const gameResult = getWinner(playerSelection, computerSelection);
+    console.log(`You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`);
 
     return `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`
 }
@@ -39,6 +41,7 @@ function getWinner(playerSelection, computerSelection) {
 
 }
 
+/*
 function game() {
     //const numRounds = parseInt(prompt('Enter the number of rounds you\'d like to play, as a whole number'));
     // above logic removed to accomodate UI design
@@ -46,20 +49,23 @@ function game() {
     for (let i = 0; i < 5; i++) {
         //const playerSelection = prompt('Choose scissors, paper or rock.').toLowerCase();
         const computerSelection = getComputerChoice();
+
         console.log(playRound(playerSelection, computerSelection));
     }
-}
+} */
 
 
 const button = document.querySelectorAll('button');
 
 button.forEach((b) => {
-    b.addEventListener('click', game());
-    b.addEventListener('click', playRound(playerSelection, computerSelection))
+ 
+    b.addEventListener('click', () => {
+        const playerSelection = b.textContent.toLowerCase();
+        playRound(playerSelection);
+    });
+    // b.addEventListener('click', playRound(playerSelection, computerSelection));
 });
 
 
 
-
-game();
 
