@@ -18,6 +18,7 @@ function playRound(playerSelection) {
     
     const roundResult = `Round ${roundCount}. You chose 
     ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
+
     resultOut(roundResult);
 }
 
@@ -34,6 +35,7 @@ function trackScore(gameResult) {
 }
 
 function resultOut(roundResult) {
+
     const resultDiv = document.createElement('div');
     resultDiv.classList.add('round-result');
     resultDiv.textContent = roundResult;
@@ -42,7 +44,6 @@ function resultOut(roundResult) {
     resultOutContainer.appendChild(resultDiv);
 }
        
-
 function getWinner(playerSelection, computerSelection) {
     const gameOutcomes = ['It\'s a draw!', 'Player wins!', 'Computer wins!'];
 
@@ -67,27 +68,20 @@ function getWinner(playerSelection, computerSelection) {
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         return gameOutcomes[2];
     }
-
 }
 
 
+// Main script
 roundCount = 0;
 playerScore = 0;
 computerScore = 0;
 
 const button = document.querySelectorAll('button');
 
-
-
-//Create a function taht ends the game when 5 rounds have been completed -> using roundcount.
-
-
-
 button.forEach((b) => {
     b.addEventListener('click', () => {
         const playerSelection = b.textContent.toLowerCase();
         playRound(playerSelection);
-        
     });
 });
 
