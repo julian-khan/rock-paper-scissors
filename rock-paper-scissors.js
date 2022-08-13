@@ -19,16 +19,21 @@ function trackScore(gameResult) {
     roundCount += 1;
 
     if (gameResult === 'Player wins!') {
-        playerScore += 1; } else if (gameResult === 'Computer wins!') {
+        playerScore += 1; 
+    } else if (gameResult === 'Computer wins!') {
             computerScore += 1;
         } else {
             return
         }
 }
 
-function resultOut() {
+function resultOut(roundResult) {
     const resultDiv = document.createElement('div');
     resultDiv.textContent = roundResult;
+
+    const resultOutContainer = document.querySelector('.result-out');
+    console.log(resultOutContainer);
+
 
 //need to finish this resultout function -> create a div that outputs the result and the number of rounds remaining.
 
@@ -67,9 +72,13 @@ roundCount = 0;
 playerScore = 0;
 computerScore = 0;
 
+const button = document.querySelectorAll('button');
+
+
+
 //Create a function taht ends the game when 5 rounds have been completed -> using roundcount.
 
-const button = document.querySelectorAll('button');
+
 
 button.forEach((b) => {
     b.addEventListener('click', () => {
