@@ -32,3 +32,7 @@ button {
     height: 70px;
     width: 100px;
 }
+
+.round-result {
+    margin-top: 30px;
+}

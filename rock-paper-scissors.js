@@ -7,11 +7,13 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection) {
+
+
     const computerSelection = getComputerChoice();
     const gameResult = getWinner(playerSelection, computerSelection);
     trackScore(gameResult);
     
-    const roundResult = `You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
+    const roundResult = `Round ${roundCount}. You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
     resultOut(roundResult);
 }
 
