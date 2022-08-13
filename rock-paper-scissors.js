@@ -37,15 +37,31 @@ function trackScore(gameResult) {
 function resultOut(roundResult) {
 
     addScoring(); 
+    addResult(roundResult);
 
+    if (roundCount === 5) {
+        printFinalResult();
+    }
+}
+
+// Fix print final result func below so that the final result (eg player wins)
+       
+function addResult(roundResult) {
     const resultDiv = document.createElement('div');
     resultDiv.classList.add('round-result');
-    resultDiv.textContent = roundResult;
+
+    if (roundCount === 5 && playerScore > computerScore) {
+        resultDiv.textContent = roundResult + " " + 'Game over, you win!';
+    } else if (roundCount === 5 && playerScore < computerScore) {
+        resultDiv.textContent = roundResult + " " + 'Game over, the computer wins!';
+    } else {
+        resultDiv.textContent = roundResult;
+    }
 
     const resultOutContainer = document.querySelector('.result-out');
     resultOutContainer.appendChild(resultDiv);
 }
-       
+
 function addScoring() {
 
     const roundNumber = document.querySelector('.round-number');

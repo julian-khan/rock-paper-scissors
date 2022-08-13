@@ -46,3 +46,9 @@ button {
 .points {
     margin-bottom: 15px;
 }
+
+.result-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
