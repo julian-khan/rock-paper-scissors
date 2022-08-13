@@ -29,11 +29,11 @@ function trackScore(gameResult) {
 
 function resultOut(roundResult) {
     const resultDiv = document.createElement('div');
+    resultDiv.classList.add('round-result');
     resultDiv.textContent = roundResult;
 
     const resultOutContainer = document.querySelector('.result-out');
-    console.log(resultOutContainer);
-
+    resultOutContainer.appendChild(resultDiv);
 
 //need to finish this resultout function -> create a div that outputs the result and the number of rounds remaining.
 
