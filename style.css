@@ -36,3 +36,13 @@ button {
 .round-result {
     margin-top: 30px;
 }
+
+.running-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.points {
+    margin-bottom: 15px;
+}

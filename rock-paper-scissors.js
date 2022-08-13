@@ -36,6 +36,8 @@ function trackScore(gameResult) {
 
 function resultOut(roundResult) {
 
+    addScoring(); 
+
     const resultDiv = document.createElement('div');
     resultDiv.classList.add('round-result');
     resultDiv.textContent = roundResult;
@@ -44,6 +46,18 @@ function resultOut(roundResult) {
     resultOutContainer.appendChild(resultDiv);
 }
        
+function addScoring() {
+
+    const roundNumber = document.querySelector('.round-number');
+    roundNumber.textContent = `Round Number: ${roundCount}`;
+
+    const playerPoints = document.querySelector('.player-points');
+    playerPoints.textContent = `Player Score: ${playerScore}`;
+
+    const computerPoints = document.querySelector('.computer-points');
+    computerPoints.textContent = `Computer Score: ${computerScore}`;
+}
+
 function getWinner(playerSelection, computerSelection) {
     const gameOutcomes = ['It\'s a draw!', 'Player wins!', 'Computer wins!'];
 
