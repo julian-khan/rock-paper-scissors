@@ -8,12 +8,16 @@ function getComputerChoice() {
 
 function playRound(playerSelection) {
 
+    if (roundCount === 5) {
+        return // This ends the game, once the user has played 5 rounds
+    }
 
     const computerSelection = getComputerChoice();
     const gameResult = getWinner(playerSelection, computerSelection);
     trackScore(gameResult);
     
-    const roundResult = `Round ${roundCount}. You chose ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
+    const roundResult = `Round ${roundCount}. You chose 
+    ${playerSelection} and the computer chose ${computerSelection}. ${gameResult}`;
     resultOut(roundResult);
 }
 
@@ -36,9 +40,6 @@ function resultOut(roundResult) {
 
     const resultOutContainer = document.querySelector('.result-out');
     resultOutContainer.appendChild(resultDiv);
-
-//need to finish this resultout function -> create a div that outputs the result and the number of rounds remaining.
-
 }
        
 
